@@ -6,17 +6,17 @@ import { useState } from "react";
 export default function App() {
   const initTodos = [
     {
-      id: '1',
+      id: '0',
       name: 'Apprendre React',
       done: false
     },
     {
-      id: '2',
+      id: '1',
       name: 'Faire la vaisselle',
       done: true
     },
     {
-      id: '3',
+      id: '2',
       name: 'Faire un jogging',
       done: false
     }
@@ -33,18 +33,22 @@ export default function App() {
     setTodos(newTodos);
   }
 
-
-  /*  const handleClick = () => {
-      const newTodos = [...todos];
-      newTodos.push("This is a new todo");
-      setTodos(newTodos);
-    }*/
+  const addNewTodo = (newTodoName) => {
+    const newTodo = {
+      id: todos.length.toString(),
+      name: newTodoName,
+      done: false
+    };
+    const newTodos = [...todos];
+    newTodos.push(newTodo);
+    setTodos(newTodos);
+  }
 
   return (
     <main className="container">
       <Header />
 
-      <AddTodo />
+      <AddTodo addNewTodo={addNewTodo}/>
 
       <ListTodos todos={todos} changeTodoStatus={changeTodoStatus} />
     </main>
