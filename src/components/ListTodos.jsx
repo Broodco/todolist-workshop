@@ -1,4 +1,4 @@
-export default function ListTodos({todos, changeTodoStatus}) {
+export default function ListTodos({todos, changeTodoStatus, deleteTodo}) {
   return (
     <section>
       <h2>Todos</h2>
@@ -11,7 +11,10 @@ export default function ListTodos({todos, changeTodoStatus}) {
               checked={todo.done}
               onChange={ () => { changeTodoStatus(todo.id) } }
             />
+
             {todo.name}
+
+            <div role="button" onClick={ () => { deleteTodo(todo.id) }}>X</div>
           </li>
         ))}
       </ul>

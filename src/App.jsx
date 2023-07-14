@@ -20,6 +20,15 @@ export default function App() {
     setTodos(newTodos);
   }
 
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => {
+      if (todo.id === id) return false;
+      return true;
+    });
+
+    setTodos(newTodos);
+  }
+
   const addNewTodo = (newTodoName) => {
     const newTodo = {
       id: uuidv4(),
@@ -50,7 +59,7 @@ export default function App() {
 
       <AddTodo addNewTodo={addNewTodo}/>
 
-      <ListTodos todos={todos} changeTodoStatus={changeTodoStatus} />
+      <ListTodos todos={todos} changeTodoStatus={changeTodoStatus} deleteTodo={deleteTodo}/>
     </main>
   )
 }
