@@ -3,7 +3,7 @@ export default function ListTodos({todos, changeTodoStatus, deleteTodo}) {
     <section>
       <h2>Todos</h2>
       <ul>
-        {todos.map((todo, index) => (
+        {todos && todos.map((todo, index) => (
           <li key={index}>
             <input
               type="checkbox"
