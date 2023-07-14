@@ -1,9 +1,15 @@
-function App() {
+import Header from "./components/Header.jsx";
+import AddTodo from "./components/AddTodo.jsx";
+import ListTodos from "./components/ListTodos.jsx";
+
+export default function App() {
   return (
     <main className="container">
-        <h1>Hello, world!</h1>
+      <Header />
+
+      <AddTodo />
+
+      <ListTodos />
     </main>
   )
 }
-
-export default App
