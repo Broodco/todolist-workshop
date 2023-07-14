@@ -42,7 +42,7 @@ export default function App() {
 
   useEffect(() => {
     const initialTodos = JSON.parse(window.localStorage.getItem(LSKEY + '.todos'))
-    setTodos(initialTodos);
+      setTodos(initialTodos ?? []);
   }, []);
 
   useEffect(() => {
